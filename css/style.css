@@ -330,6 +330,8 @@ footer {
 
 /* モバイル版 */
 @media (max-width:600px){
-    
+    .service_area {
+        grid-auto-columns: auto;
+    }
 }
 
