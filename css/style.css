@@ -328,7 +328,9 @@ footer {
 
 
 /* モバイル版 */
-@media (){
-    
+@media (max-width:600px){
+    #about h2 {
+        font-size: 20px;
+    }
 }
 
