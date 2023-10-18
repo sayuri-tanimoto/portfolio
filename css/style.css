@@ -9,6 +9,7 @@ body {
     color: #0e1424;
     font-family: "Avenir Next", "Futura"," Hind", "Helvetica", "Arial", "游ゴシック", "A-OTF UD新ゴ Pr6N", "Noto Sans", "Noto Sans Japanese", sans-serif;
     font-weight: 300;
+    -webkit-text-size-adjust: 100%;
 }
 a {
     color: #0e1424;
@@ -329,8 +330,6 @@ footer {
 
 /* モバイル版 */
 @media (max-width:600px){
-    #about h2 {
-        font-size: 20px;
-    }
+    
 }
 
