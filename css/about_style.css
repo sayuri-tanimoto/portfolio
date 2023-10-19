@@ -1,0 +1,314 @@
+@charset "UTF-8";
+
+/* 共通部分 */
+html {
+    font-size: 62.5%;
+}
+body {
+    background-color: #eaeaea;
+    color: #0e1424;
+    font-family: "Avenir Next", "Futura"," Hind", "Helvetica", "Arial", "游ゴシック", "A-OTF UD新ゴ Pr6N", "Noto Sans", "Noto Sans Japanese", sans-serif;
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+a {
+    color: #0e1424;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+li {
+    list-style: none;
+}
+.sp_only {
+    display: none;
+}
+.pc_only {
+    display: block;
+}
+
+/* scroll */
+.scroll_up {
+    opacity: 0;
+    transform: translate(0,0);
+    transition: all 1.5s;
+    transform: translate(0,30px);
+    &.scrollin{
+        opacity: 1 !important;
+        transform: translate(0, 0) !important;
+    }
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    background: #eaeaea;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    padding: 0 4%;
+    box-sizing: border-box;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+.main-nav {
+    display: flex;
+    font-size: 1.6rem;
+    margin-top: 34px;
+    text-transform:capitalize;
+    z-index: 999;
+}
+.main-nav li {
+    margin-left: 36px;
+}
+ul li a {
+    display: block;
+
+}
+.main-nav a:hover {
+    color: #acaba9;
+}
+/* ハンバーガーメニュー */
+.humberger {
+    display: block;
+    height: 60px;
+    margin-left: auto;
+    position: relative;
+    z-index: 10;
+    width: 60px;
+    border: none;
+    background-color: transparent;
+}
+.humberger.-active .humberger__line {
+    background-color: transparent;
+}
+.humberger.-active .humberger__line::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.humberger.-active .humberger__line::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+.humberger.-active .humberger__text::before {
+    content: 'close';
+}
+.humberger__line {
+    display: block;
+    height: 2px;
+    position: absolute;
+    top: 23px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    background-color: #0e1424;
+    transition: 0.4s;
+}
+.humberger__line:before,
+.humberger__line:after {
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background-color: #0e1424;
+    transition: inherit;
+}
+.humberger__line:before {
+    top: -6px;
+}
+.humberger__line:after {
+    top: 6px;
+}
+.humberger__text {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+.humberger__text::before {
+    content: "menu";
+    text-align: center;
+    color: #0e1424;
+    font-size: 1.2rem;
+}
+.header__nav-area {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 9;
+    height: 100vh;
+    width: 300px;
+    visibility: hidden;
+    padding-top: 60px;
+    background-color: #374254;
+    transition: 0.4s;
+}
+.header__nav-area.-active {
+    left: 0;
+    visibility: visible;
+}
+.global-navigation {
+    padding-top: 40px;
+    padding-right: 25px;
+    padding-bottom: 120px;
+    padding-left: 25px;
+}
+.global-navigation__list > li {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eaeaea;
+}
+.global-navigation__list > li + li {
+    margin-top: 20px;
+}
+.global-navigation__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    transition: color 0.4s;
+    font-size: 1.4rem;
+}
+
+
+/* ---- main ---- */
+/* about */
+#about {
+    width: 100%;
+    height: auto;
+}
+.about_ttl {
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+.about {
+    margin: 50px 10vw 200px 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about-profile {
+    margin-right: 50px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.name {
+    font-size: 2.8rem;
+    color: #374254;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+.txt {
+    width: 80%;
+}
+.about img {
+    width: 30%;
+}
+
+/* skill */
+#skill {
+    width: 100%;
+    height: auto;
+}
+.skill_ttl {
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+.skill {
+    width: 100%;
+    height: auto;
+    font-size: xxx-large;
+    margin-bottom: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+
+
+
+/* footer */
+footer {
+    background: #0e1424;
+    color: #eaeaea;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.footer {
+    margin: 0 auto;
+    text-align: center;
+}
+.logo1 {
+    padding: 15px;
+    text-align: center;
+}
+.footer-nav {
+    background: #0e1424;
+}
+.footer-nav li {
+    background: #0e1424;
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 15px 10px;
+    text-align: center;
+    text-transform:capitalize;
+}
+.footer-nav a {
+    color: #eaeaea;
+    font-size: 1.6rem;
+    display: block;
+}
+.footer-nav a:hover {
+    color: #acaba9;
+}
+.footer p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    background: #0e1424;
+    color: #acaba9;
+}
+
+
+/* モバイル版 */
+@media (max-width:600px){
+    .sp_only {
+        display: block;
+    }
+    .pc_only {
+        display: none;
+    }
+    .about {
+        flex-flow: column-reverse;
+    }
+    .about img {
+        width: 80%;
+        margin-bottom: 50px;
+    }
+    .about-profile {
+        margin: 0 auto;
+    }
+    .name {
+        margin-bottom: 2vh;
+        font-size: 2.1rem;
+    }
+    .txt {
+        width: 100%;
+    }
+}
+

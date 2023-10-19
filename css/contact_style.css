@@ -1,0 +1,443 @@
+@charset "UTF-8";
+
+/* 共通部分 */
+html {
+    font-size: 62.4%;
+}
+body {
+    background-color: #eaeaea;
+    color: #0e1424;
+    font-family: "Avenir Next", "Futura"," Hind", "Helvetica", "Arial", "游ゴシック", "A-OTF UD新ゴ Pr6N", "Noto Sans", "Noto Sans Japanese", sans-serif;
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+a {
+    color: #0e1424;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+li {
+    list-style: none;
+}
+.sp_only {
+    display: none;
+}
+.pc_only {
+    display: block;
+}
+
+/* scroll */
+.scroll_up {
+    opacity: 0;
+    transform: translate(0,0);
+    transition: all 1.5s;
+    transform: translate(0,30px);
+    &.scrollin{
+        opacity: 1 !important;
+        transform: translate(0, 0) !important;
+    }
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    background: #eaeaea;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    padding: 0 4%;
+    box-sizing: border-box;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+.main-nav {
+    display: flex;
+    font-size: 1.6rem;
+    margin-top: 34px;
+    text-transform:capitalize;
+    z-index: 999;
+}
+.main-nav li {
+    margin-left: 36px;
+}
+ul li a {
+    display: block;
+}
+.main-nav a:hover {
+    color: #acaba9;
+}
+/* ハンバーガーメニュー */
+.humberger {
+    display: block;
+    height: 60px;
+    margin-left: auto;
+    position: relative;
+    z-index: 10;
+    width: 60px;
+    border: none;
+    background-color: transparent;
+}
+.humberger.-active .humberger__line {
+    background-color: transparent;
+}
+.humberger.-active .humberger__line::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.humberger.-active .humberger__line::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+.humberger.-active .humberger__text::before {
+    content: 'close';
+}
+.humberger__line {
+    display: block;
+    height: 2px;
+    position: absolute;
+    top: 23px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    background-color: #0e1424;
+    transition: 0.4s;
+}
+.humberger__line:before,
+.humberger__line:after {
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background-color: #0e1424;
+    transition: inherit;
+}
+.humberger__line:before {
+    top: -6px;
+}
+.humberger__line:after {
+    top: 6px;
+}
+.humberger__text {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+.humberger__text::before {
+    content: "menu";
+    text-align: center;
+    color: #0e1424;
+    font-size: 1.2rem;
+}
+.header__nav-area {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 9;
+    height: 100vh;
+    width: 300px;
+    visibility: hidden;
+    padding-top: 60px;
+    background-color: #374254;
+    transition: 0.4s;
+}
+.header__nav-area.-active {
+    left: 0;
+    visibility: visible;
+}
+.global-navigation {
+    padding-top: 40px;
+    padding-right: 25px;
+    padding-bottom: 120px;
+    padding-left: 25px;
+}
+.global-navigation__list > li {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eaeaea;
+}
+.global-navigation__list > li + li {
+    margin-top: 20px;
+}
+.global-navigation__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    transition: color 0.4s;
+    font-size: 1.4rem;
+}
+
+
+/* ---- main ---- */
+/* contact */
+#contact {
+    width: 100%;
+    height: auto;
+}
+.contact_ttl {
+    margin: 100px 0 50px 0;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+.contact_text {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+    height: auto;
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+section2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 20vh;
+}
+.form {
+    max-width: 60%;
+    width: 100%;
+    padding: 25px 40px 10px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form .text{
+    text-align: center;
+    font-size: 4.1rem;
+    font-weight: 600;
+    background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.form form {
+    padding: 30px 0 0 0;
+}
+.form form .contact-wrapper {
+    display: flex;
+    margin: 32px 0;
+}
+form .contact-wrapper .contact-form {
+    width: 90%;
+    height: 40px;
+    margin: 0 20px;
+    position: relative;
+}
+form .contact-wrapper .textarea {
+    height: 70px;
+}
+.contact-form input,
+.textarea textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 1.7rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+label {
+    display: flex;
+}
+.contact-form input:focus ~ label, .textarea textarea:focus ~ label,
+.contact-form input:valid ~ label, .textarea textarea:valid ~ label {
+    transform: translateY(-20px);
+    font-size:  1.4rem;
+    color: #0e1424;
+}
+.textarea textarea {
+    resize: none;
+    padding-top: 10px;
+}
+.contact-form label {
+    position: absolute;
+    pointer-events: none;
+    bottom: 10px;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.textarea label {
+    width: 100%;
+    bottom: 40px;
+}
+.contact-form .border {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+}
+.contact-form .border:before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: #8a8fa3;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+.contact-form input:focus ~ .border:before,
+.contact-form input:valid ~ .border:before,
+.textarea textarea:focus ~ .border:before,
+.textarea textarea:valid ~ .border:before {
+    transform: scale(1);
+}
+.button {
+    padding: 15px 20px;
+    font-size: 1.6rem;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #0e1424;
+    z-index: 1;
+}
+.button::after,
+.button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+}
+.button::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #adbbc6;
+    border-radius: 10px;
+}
+.button::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+.button:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+}
+.button:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+}
+.button:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+}
+
+/* footer */
+footer {
+    background: #0e1424;
+    color: #eaeaea;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.footer {
+    margin: 0 auto;
+    text-align: center;
+}
+.logo1 {
+    padding: 15px;
+    text-align: center;
+}
+.footer-nav {
+    background: #0e1424;
+}
+.footer-nav li {
+    background: #0e1424;
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 15px 10px;
+    text-align: center;
+    text-transform:capitalize;
+}
+.footer-nav a {
+    color: #eaeaea;
+    font-size: 1.6rem;
+    display: block;
+}
+.footer-nav a:hover {
+    color: #acaba9;
+}
+.footer p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    background: #0e1424;
+    color: #acaba9;
+}
+
+
+@media (min-width:960px){
+    .form .text {
+        font-size: 3rem;
+    }
+    .form form {
+        padding: 10px 0 0 0;
+    }
+    .form form .contact-wrapper {
+        display: block;
+    }
+    form .contact-form {
+        margin: 35px 0 !important;
+    }
+    .submit-btn .input-data {
+        width: 40% !important;
+    }
+}
+/* モバイル版 */
+
+@media (max-width:600px) {
+    .sp_only {
+        display: block;
+    }
+    .pc_only {
+        display: none;
+    }
+    .contact_text {
+        width: 90%;
+        margin-left: auto;
+        text-align: justify;
+        line-height: 1.7;
+    }
+    .form {
+        max-width: fit-content;
+    }
+    .form form {
+        padding: initial;
+    }
+    .form form .contact-wrapper {
+        flex-direction: column;
+    }
+    form .contact-wrapper .contact-form  {
+        width: 100%;
+        margin: 0 auto;
+        height: 60px;
+    }
+    form .contact-wrapper .textarea {
+        height: 90px;
+    }
+}
