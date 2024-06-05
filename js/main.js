@@ -124,6 +124,12 @@ const swiper = new Swiper(".swiper", {
     clickable: "clickable",
   },
   loop: true,
+  autoplay: {
+    delay: 0,
+    pauseOnMouseEnter: true,
+    disableOnInteraction: false, 
+  },
+  speed: 5000,
   spaceBetween: 10,
   slidesPerView: 1.5,
   centeredSlides: true,
