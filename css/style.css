@@ -272,7 +272,7 @@ ul li a {
 }
 .swiper {
     width: 70%;
-    height: 300px;
+    height: fit-content;
     margin-bottom: 50px;
 }
 .swiper-slide {
